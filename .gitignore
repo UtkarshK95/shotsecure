@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+out/
+
+# Vite cache
+.vite/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+.cursor/
+.claude/
+
+# TypeScript
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+
+# Uploaded CSV files (temp — deleted after processing, directory tracked via .gitkeep)
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Package manager caches
+.npm/
+.yarn/
+.pnpm-store/
