@@ -2,6 +2,8 @@
 
 School vaccination management portal — track students, drives, and vaccination records with bulk import and CSV reporting.
 
+**[Live Demo](https://shotsecure-uk.vercel.app)** — login with `admin` / `password`
+
 ---
 
 ## Overview
