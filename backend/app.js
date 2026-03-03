@@ -1,8 +1,18 @@
 require('dotenv').config();
-const express = require('express');
-const cors    = require('cors');
+const express  = require('express');
+const cors     = require('cors');
+const mongoose = require('mongoose');
 
 const app = express();
+
+// Connect to MongoDB (cached for serverless re-use)
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/shotsecure';
+let _conn = null;
+const connectDB = async () => {
+  if (_conn) return;
+  _conn = await mongoose.connect(MONGO_URI);
+};
+app.use((_req, _res, next) => { connectDB().then(next).catch(next); });
 
 app.use(cors({ origin: process.env.FRONTEND_URL || 'http://localhost:5173' }));
 app.use(express.json());
