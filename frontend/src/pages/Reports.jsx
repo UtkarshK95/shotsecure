@@ -71,7 +71,7 @@ export default function Reports() {
   // CSV export uses fetch directly so the browser triggers a file download
   const handleExportCSV = () => {
     const params = new URLSearchParams({ format: 'csv', ...buildParams() });
-    fetch(`http://localhost:5002/api/reports?${params.toString()}`, {
+    fetch(`${import.meta.env.VITE_API_URL || "http://localhost:5002/api"}/reports?${params.toString()}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     })
       .then((res) => res.blob())
